@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Sun Dec 01 00:20:53 EET 2019
+org.eclipse.jst.j2ee.server\:elibrary-util=WEB-INF/lib/elibrary-util.jar
+org.eclipse.jst.j2ee.server\:elibrary-service=WEB-INF/lib/elibrary-service.jar
+org.eclipse.jst.j2ee.server\:elibrary-dao=WEB-INF/lib/elibrary-dao.jar
+org.eclipse.jst.j2ee.server\:elibrary-domain=WEB-INF/lib/elibrary-domain.jar

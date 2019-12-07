@@ -1,0 +1,4 @@
+127.0.0.1 - - [30/Mar/2017:22:09:43 +0300] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:22:10:29 +0300] "GET /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.authentication.LoginPage?3 HTTP/1.1" 404 1146
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:22:10:29 +0300] "GET /favicon.ico HTTP/1.1" 404 1016
+127.0.0.1 - - [30/Mar/2017:22:10:39 +0300] "GET / HTTP/1.1" 404 994

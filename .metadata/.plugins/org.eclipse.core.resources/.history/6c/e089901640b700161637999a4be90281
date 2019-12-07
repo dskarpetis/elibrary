@@ -1,0 +1,35 @@
+package dskarpetis.elibrary.ui.authentication;
+
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.markup.html.form.Form;
+
+import dskarpetis.elibrary.wicket.BlockUIAjaxButton;
+
+/**
+ *
+ * 
+ * @author dskarpetis
+ */
+public class LoginAjaxButton extends BlockUIAjaxButton  {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @param id
+	 */
+	public LoginAjaxButton(final String id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	protected void onSubmit(AjaxRequestTarget target, Form<?> form){
+		LoginPanel.get(this).login();
+		LoginPanel.get(this).updateFeedback(target);
+	}
+
+	@Override
+	protected void onError(AjaxRequestTarget target, Form<?> form) {
+		LoginPanel.get(this).updateFeedback(target);
+	}
+
+}

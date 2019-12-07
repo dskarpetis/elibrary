@@ -1,0 +1,57 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+	<wicket:panel>
+		<div class="col-md-6 col-md-offset-3 offset-md-3 col-sm-8 col-sm-offset-2 offset-sm-2">
+			<div class="uploadPanel">
+				<form wicket:id="upload" class="form-horizontal" role="form">
+					<div wicket:id="upload-input">
+						<h3>Upload a book</h3>
+						<div wicket:id="title-group">
+							<input class="form-control" type="text" wicket:id="title" />
+						</div>
+						<div wicket:id="author-group">
+							<input class="form-control" type="text" wicket:id="author" />
+						</div>
+						<div wicket:id="publisher-group">
+							<input class="form-control" type="text" wicket:id="publisher" />
+						</div>
+						<div wicket:id="yearpublish-group">
+							<input class="form-control datepicker3" type="text" wicket:id="yearpublish" />
+						</div>
+						<div wicket:id="genre-group">
+							<select class="form-control" type="text" wicket:id="genre"></select>
+						</div>
+						<div wicket:id="isbn13-group">
+							<input class="form-control" type="text" wicket:id="isbn13" />
+						</div>
+						<div wicket:id="edition-group">
+							<input class="form-control" type="text" wicket:id="edition" />
+						</div>
+						<div wicket:id="description-group">
+							<textarea class="form-control" type="text" wicket:id="description" rows="4" cols="8"></textarea>
+						</div>
+						<div wicket:id="fileuploadfield-group">
+							<label class="btn btn-block btn-primary"> Select book for upload <input
+								wicket:id="fileuploadfield" type="file" accept=".pdf" style="display: none;" />
+							</label>
+						</div>
+						<div class="form-group">
+							<div wicket:id="feedback" style="color: red;"></div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-4 col-sm-offset-4 ">
+								<button class="btn btn-primary  pull-right" wicket:id="submit">Upload</button>
+								<button class="btn btn-primary" wicket:id="reset">
+									<wicket:message key="clear" />
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<!-- /form -->
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+
+</html>

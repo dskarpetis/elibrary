@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="firstname">Firstname</entry>
+	<entry key="lastname">Lastname</entry>
+	<entry key="email">Email</entry>
+	<entry key="username">Username</entry>
+	<entry key="password">Password</entry>
+	<entry key="birthdate">Birthdate</entry>
+	<entry key="gender">Gender</entry>
+	<entry key="gender.nullValid">Select gender</entry>
+	<entry key="firstname-help-title">Sets the first name</entry>
+	<entry key="firstname-help-body">The firstname must contain latin uppercase characters</entry>
+	<entry key="lastname-help-title">Sets the lastname</entry>
+	<entry key="lastname-help-body">The lastname must contain latin uppercase characters</entry>
+	<entry key="email-help-title">Sets the email</entry>
+	<entry key="email-help-body"><![CDATA[The email must start with Alphanumeric characters and end with a '@' Symbol. The email's domain name must start with Alphanumeric follow by first level Tld (.com, .gr, ...) 
+																				and optional follow by a second level Tld (.com.au, .com.my, ...), where second level Tld must start with a dot “.” and length must equal or more than 2 characters. </br> 
+																				Some example of valid email addresses are described below:<b><ul><li>dskarpetis@hotmail.com, dskarpetis-100@hotmail.com, dskarpetis.100@hotmail.com</li>
+																				<li>dskarpetis111@dskarpetis.com, dskarpetis-100@dskarpetis.net, dskarpetis.100@dskarpetis.com.au</li>
+																				<li>dskarpetis+100@gmail.com, dskarpetis-100@hotmail-test.com</li></ul></b>]]></entry>
+	<entry key="username-help-title">Sets the username.</entry>
+	<entry key="username-help-body"><![CDATA[The username length must be at least 5 latin characters and maximum length of 20, with any character (lowercase or uppercase), digit or special symbol “_-” only.</br>
+																						Some example of valid username are described below:<b><ul><li>dskarpetis</li><li>dskarpetis_2002</li><li>DskaRpetis-2002</li><li>dska-4_rpetis</li></ul></b>]]></entry>
+	<entry key="password-help-title">Sets the password</entry>
+	<entry key="password-help-body"><![CDATA[The password length must be at least 8 latin characters and maximum length of 20, with at least one digit, one uppercase letter, one lowercase letter and one special symbol ("!@#$%^&*()_+-=]").</br> 
+																						Some example of valid username are described below:<b><ul><li>dSkarpet-250</li><li>wAterAqua1A@</li></ul></b>]]></entry>
+	<entry key="birthdate-help-title">Sets the date of birth</entry>
+	<entry key="birthdate-help-body">The user must be at least 18 years old.</entry>
+	<entry key="gender-help-title">Sets the gender</entry>
+	<entry key="gender-help-body">Select your gender</entry>
+	<entry key="NotAllFieldsEmptyValidator">Please fill in at least one field!</entry>
+	<entry key="UsernameExistsValidator">Username already exists, enter a different username.</entry>
+	<entry key="EmailExistsValidator">Email already exists, enter a different email.</entry>
+	<entry key="NameValidator.name">Invalid value</entry>
+	<entry key="UsernameValidator.username">Invalid username value</entry>
+	<entry key="EmailValidator.email">Invalid email address</entry>
+	<entry key="PasswordValidator.password">Invalid password</entry>
+	<entry key="BirthDateValidator.dateOfBirth">Invalid date of birth</entry>
+	<entry key="clear">Clear</entry>
+</properties>

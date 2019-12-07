@@ -1,0 +1,14 @@
+127.0.0.1 - - [08/May/2017:22:01:19 +0300] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:31 +0300] "GET /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.authentication.LoginPage?3 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:32 +0300] "GET /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.authentication.LoginPage HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:32 +0300] "GET /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.authentication.LoginPage;jsessionid=A2AE6EA4613E718ABCBD94274F8D0015?0 HTTP/1.1" 200 6942
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:38 +0300] "POST /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.authentication.LoginPage;jsessionid=A2AE6EA4613E718ABCBD94274F8D0015?0-1.IBehaviorListener.0-login-login-submit HTTP/1.1" 200 81
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:38 +0300] "GET /elibrary/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:38 +0300] "GET /elibrary/?1 HTTP/1.1" 200 8699
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:40 +0300] "GET /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.upload.UploadPage HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:40 +0300] "GET /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.upload.UploadPage?2 HTTP/1.1" 200 24731
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:49 +0300] "POST /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.upload.UploadPage?2-1.IBehaviorListener.0-upload-upload-upload~input-submit&wicket-ajax=true&wicket-ajax-baseurl=wicket%2Fbookmarkable%2Fdskarpetis.elibrary.ui.upload.UploadPage%3F2 HTTP/1.1" 200 21310
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:56 +0300] "POST /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.upload.UploadPage?2-1.IBehaviorListener.0-upload-upload-upload~input-submit&wicket-ajax=true&wicket-ajax-baseurl=wicket%2Fbookmarkable%2Fdskarpetis.elibrary.ui.upload.UploadPage%3F2 HTTP/1.1" 200 21313
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:57 +0300] "POST /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.upload.UploadPage?2-1.IBehaviorListener.0-upload-upload-upload~input-submit&wicket-ajax=true&wicket-ajax-baseurl=wicket%2Fbookmarkable%2Fdskarpetis.elibrary.ui.upload.UploadPage%3F2 HTTP/1.1" 200 21313
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:01:58 +0300] "POST /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.upload.UploadPage?2-1.IBehaviorListener.0-upload-upload-upload~input-submit&wicket-ajax=true&wicket-ajax-baseurl=wicket%2Fbookmarkable%2Fdskarpetis.elibrary.ui.upload.UploadPage%3F2 HTTP/1.1" 200 21313
+0:0:0:0:0:0:0:1 - - [08/May/2017:22:02:00 +0300] "POST /elibrary/wicket/bookmarkable/dskarpetis.elibrary.ui.upload.UploadPage?2-1.IBehaviorListener.0-upload-upload-upload~input-submit&wicket-ajax=true&wicket-ajax-baseurl=wicket%2Fbookmarkable%2Fdskarpetis.elibrary.ui.upload.UploadPage%3F2 HTTP/1.1" 200 21313

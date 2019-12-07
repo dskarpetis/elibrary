@@ -1,0 +1,33 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+	<wicket:panel>
+				<div id="no-more-tables">
+					<table
+						class="col-md-8 col-md-offset-2 offset-md-2 table-bordered table-striped table-hover table-condensed">
+						<thead class="cf">
+							<tr>
+								<th>Title</th>
+								<th>Author</th>
+								<th>Publisher</th>
+								<th>Genre</th>
+								<th>ISBN13</th>
+								<th>Rate</th>
+								<th>Details</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr wicket:id="books">
+								<td wicket:id="title" data-title="Title"></td>
+								<td wicket:id="author" data-title="Author"></td>
+								<td wicket:id="publisher" data-title="Publisher"></td>
+								<td wicket:id="genre" data-title="Genre"></td>
+								<td wicket:id="isbn13" data-title="ISBN13"></td>
+								<td wicket:id="rate" data-title="Rate"></td>
+								<td data-title="Details"><a href="#" wicket:id="details">Details</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+	</wicket:panel>
+</body>
+</html>

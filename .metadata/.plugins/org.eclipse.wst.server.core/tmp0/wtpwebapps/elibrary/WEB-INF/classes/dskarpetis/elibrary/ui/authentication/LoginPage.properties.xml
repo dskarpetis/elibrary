@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="username">Username</entry>
+	<entry key="password">Password</entry>
+	<entry key="UsernameExistsValidator">This account does not exist</entry>
+	<entry key="PasswordExistsValidator">The account or your password is not correct</entry>
+	<entry key="username.Required">Enter your username</entry>
+	<entry key="password.Required">Enter your password</entry>
+
+</properties>

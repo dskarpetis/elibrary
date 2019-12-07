@@ -1,0 +1,253 @@
+/**
+ * UploadPanel.java
+ *
+ * Skarpetis Dimitris 2016, all rights reserved.
+ */
+package dskarpetis.elibrary.ui.upload;
+
+import java.util.Date;
+import java.util.List;
+
+import org.apache.wicket.Component;
+import org.apache.wicket.WicketRuntimeException;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.datetime.markup.html.form.DateTextField;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.form.DropDownChoice;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.FormComponent;
+import org.apache.wicket.markup.html.form.TextArea;
+import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.form.upload.FileUpload;
+import org.apache.wicket.markup.html.form.upload.FileUploadField;
+import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.panel.ComponentFeedbackPanel;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.LoadableDetachableModel;
+import org.apache.wicket.util.file.File;
+import org.apache.wicket.util.lang.Bytes;
+import org.apache.wicket.validation.validator.StringValidator;
+
+import dskarpetis.elibrary.domain.Author;
+import dskarpetis.elibrary.domain.Book;
+import dskarpetis.elibrary.domain.Genre;
+import dskarpetis.elibrary.domain.Publisher;
+import dskarpetis.elibrary.init.AppInjector;
+import dskarpetis.elibrary.service.book.BookService;
+import dskarpetis.elibrary.service.user.UserService;
+import dskarpetis.elibrary.ui.ElibrarySession;
+import dskarpetis.elibrary.ui.convert.ConvertFormDataToDomain;
+import dskarpetis.elibrary.ui.search.SearchPage;
+import dskarpetis.elibrary.ui.signup.SignupPanel;
+import dskarpetis.elibrary.ui.validator.AuthorValidator;
+import dskarpetis.elibrary.ui.validator.EditionValidator;
+import dskarpetis.elibrary.ui.validator.Isbn13ExistsValidator;
+import dskarpetis.elibrary.ui.validator.Isbn13Validator;
+import dskarpetis.elibrary.ui.validator.PublisherValidator;
+import dskarpetis.elibrary.ui.validator.YearPublishedValidator;
+import dskarpetis.elibrary.util.form.FormField;
+
+/**
+ * Class that defines the UploadPanel component
+ * 
+ * @author dskarpetis
+ */
+public class UploadPanel extends Panel {
+	private static final long serialVersionUID = 1L;
+
+	// Define String KEYS for the component declaration <span wicket:id="KEY">
+	// to HTML file
+	private static final String TITLE_KEY = "title";
+	private static final String AUTHOR_KEY = "author";
+	private static final String PUBLISHER_KEY = "publisher";
+	private static final String YEARPUBLISH_KEY = "yearpublish";
+	private static final String GENRE_KEY = "genre";
+	private static final String ISBN13_KEY = "isbn13";
+	private static final String EDITION_KEY = "edition";
+	private static final String DATE_PATTERN = "yyyy";
+	private static final String DESCRIPTION_KEY = "description";
+	private static final String FILEUPLOAD_KEY = "fileuploadfield";
+	private static final String CLEAR_FROM_KEY = "reset";
+	private Component uploadInput;
+	FileUploadField fileuploadfield;
+	FeedbackPanel feedback;
+
+	// Default local path for storing book file
+	File file;
+	FileUpload fileBook;
+
+	/**
+	 * Detachable model for {@link UserService} instance, since we do
+	 * not want this to be serialized during page versioning.
+	 */
+	private IModel<BookService> serviceModel = new LoadableDetachableModel<BookService>() {
+		private static final long serialVersionUID = 1L;
+
+		@Override
+		protected BookService load() {
+			return AppInjector.get().getInstance(BookService.class);
+		}
+	};
+
+	/**
+	 * @param id
+	 * @param formModel
+	 */
+	public UploadPanel(String id, final IModel<UploadData> formModel) {
+		super(id, formModel);
+		// Form component
+		final Form<UploadData> form = new Form<UploadData>("upload");
+		// Set upload maximum file size to 40 mb
+		form.setMaxSize(Bytes.kilobytes(40000));
+		// ComponentFeedbackPanel component that bind error messages with form
+		// component
+		feedback = new ComponentFeedbackPanel("feedback", form);
+		feedback.setOutputMarkupId(true);
+		// TextField component for title html field
+		FormComponent<String> title = new TextField<String>(TITLE_KEY).setRequired(true);
+		FormField titleGroup = new FormField.Builder(title).build();
+		// add StringValidator Component for min and max size input
+		title.add(new StringValidator(1, 30));
+		// TextField component for author html field
+		FormComponent<String> author = new TextField<String>(AUTHOR_KEY).setRequired(true);
+		FormField authorGroup = new FormField.Builder(author).build();
+		// add Author Validator Component
+		author.add(new AuthorValidator());
+		// TextField component for publisher html field
+		FormComponent<String> publisher = new TextField<String>(PUBLISHER_KEY).setRequired(true);
+		FormField publisherGroup = new FormField.Builder(publisher).build();
+		// add Publisher Validator Component
+		publisher.add(new PublisherValidator());
+		// DateTextField component for yearpublish html field
+		FormComponent<Date> yearpublish = DateTextField.forDatePattern(YEARPUBLISH_KEY, DATE_PATTERN).setRequired(true);
+		FormField yearpublishGroup = new FormField.Builder(yearpublish).build();
+		// add PublishedDate Validator Component
+		yearpublish.add(new YearPublishedValidator());
+		FormComponent<String> genre = new DropDownChoice<>(GENRE_KEY, retrieveGenres()).setNullValid(true).setRequired(true);
+		FormField genreGroup = new FormField.Builder(genre).build();
+		// TextField component for isbn13 html field
+		FormComponent<String> isbn13 = new TextField<String>(ISBN13_KEY).setRequired(true);
+		FormField isbn13Group = new FormField.Builder(isbn13).build();
+		// Check if Isbn13 exists in external resource
+		isbn13.add(new Isbn13ExistsValidator(serviceModel));
+		// add Isbn13 Validator Component
+		isbn13.add(new Isbn13Validator());
+		// TextField component for edition html field
+		FormComponent<String> edition = new TextField<String>(EDITION_KEY).setRequired(true);
+		FormField editionGroup = new FormField.Builder(edition).build();
+		// add Edition Validator Component
+		edition.add(new EditionValidator());
+		// FileUploadField component for file html field
+		fileuploadfield = (FileUploadField) new FileUploadField(FILEUPLOAD_KEY).setRequired(true);
+		FormField fileuploadGroup = new FormField.Builder(fileuploadfield).build();
+		// TextArea component for description html field
+		TextArea<String> description = (TextArea<String>) new TextArea<String>(DESCRIPTION_KEY).setRequired(true);
+		FormField descriptionGroup = new FormField.Builder(description).build();
+		// add StringValidator Component for min and max size input
+		description.add(new StringValidator(10, 200));
+		uploadInput = new WebMarkupContainer("upload-input");
+		uploadInput.setOutputMarkupId(true);
+		// create and add Button component to form
+		AjaxButton uploadButton = new UploadAjaxButton("submit");
+		// add components to the parents component
+		queue(form, feedback, titleGroup, authorGroup, publisherGroup, yearpublishGroup, genreGroup, isbn13Group, editionGroup, fileuploadGroup,
+				descriptionGroup, uploadInput, uploadButton);
+		// Create and add Clear button component to form. Clear button reset all
+		// form fields
+		queue(new Link<Void>(CLEAR_FROM_KEY) {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+				formModel.setObject(new UploadData());
+			}
+		});
+
+	}
+
+	/**
+	 * Convert input {@link UploadData} to another objects. Then call
+	 * BookService to add book in the database.
+	 * 
+	 * @param data
+	 * @param filePath
+	 */
+	public void sendToBookService(final UploadData data, String filePath) {
+		ConvertFormDataToDomain convertToDomain = new ConvertFormDataToDomain();
+		Author author = convertToDomain.mapUploadDataToAuthor.apply(data);
+		Publisher publisher = convertToDomain.mapUploadDataToPublisher.apply(data);
+		Book book = convertToDomain.mapUploadDataToBook.apply(data);
+		@SuppressWarnings("unused")
+		Genre genre = convertToDomain.mapSignupDataToGenre.apply(data);
+		serviceModel.getObject().uploadBook(author, publisher, book, filePath);
+		serviceModel.getObject().uploadStats(book, ElibrarySession.get().getUserLogin());
+
+	}
+
+	/**
+	 * @return genderNamelist
+	 */
+	public List<String> retrieveGenres() {
+		List<Genre> genrelist = serviceModel.getObject().getGenres();
+		Genre genre = new Genre();
+		List<String> genreNamelist = genre.getGenreName(genrelist);
+		return genreNamelist;
+	}
+
+	/**
+	 * Authenticate user using the credentials provided inside the form. The
+	 * credentials must be verified BEFORE calling this function if you want to
+	 * present meaningful error messages. If the credentials are wrong when this
+	 * function is called, a {@link WicketRuntimeException} will be thrown.
+	 */
+	public void upload() {
+		try {
+			UploadData data = (UploadData) getDefaultModelObject();
+			fileBook = fileuploadfield.getFileUpload();
+			if (fileBook.getClientFileName().toLowerCase().endsWith(".pdf")) {
+				file = new File(System.getProperty("java.io.tmpdir"), fileBook.getClientFileName());
+				fileBook.writeTo(file);
+				sendToBookService(data, file.toString());
+				fileBook.closeStreams();
+				setResponsePage(SearchPage.class);
+			} else {
+				error("Only .pdf files!!!");
+			}
+		} catch (Exception exception) {
+			// This should never happen
+			throw new WicketRuntimeException("Login failed! Make sure that the credentials are correct and UserService is running.", exception);
+		}
+	}
+
+	/**
+	 * Helper method to access a Components {@link SignupPanel} parent.
+	 * 
+	 * @param component
+	 *            The component to get the parent panel from
+	 * @return The {@link SignupPanel} instance.
+	 */
+	public static UploadPanel get(final Component component) {
+		Component p = component.getParent();
+		if (p instanceof UploadPanel) {
+			return (UploadPanel) p;
+		} else if (p != null) {
+			return get(p);
+		} else {
+			throw new IllegalArgumentException(String.format("Component doesn't belong to a SignupPanel instance"));
+		}
+	}
+
+	/**
+	 * Add the password input group the the {@link AjaxRequestTarget}.
+	 * 
+	 * @param target
+	 *            The {@link AjaxRequestTarget} that the password input group
+	 *            will be added to.
+	 */
+	public void updateUploadInput(final AjaxRequestTarget target) {
+		target.add(uploadInput, feedback);
+	}
+}

@@ -1,0 +1,34 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+	<wicket:panel>
+		<div class="col-md-6 col-md-offset-3 offset-md-3 col-sm-8 col-sm-offset-2 offset-sm-2">
+			<div class="searchByFieldPanel">
+				<form wicket:id="search-by-field-form" role="form">
+					<div class="row">
+						<div class="col-md-6 ">
+							<div class="form-group">
+								<input wicket:id="searchField" type="text" class="form-control input-lg"
+									placeholder="Search book by...">
+							</div>
+						</div>
+						<div class="col-md-3 ">
+							<div class="form-group">
+								<select class="form-control input-lg" type="text" wicket:id="searchEnum"></select>
+							</div>
+						</div>
+						<div class="col-md-3 ">
+							<input type="submit" wicket:id="submit" wicket class="btn btn-primary  btn-lg  btn-block"
+								value="Search">
+						</div>
+						<div class="form-group">
+							<div class="col-sm-5 col-sm-offset-3">
+								<div wicket:id="feedback" style="color: red;"></div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>

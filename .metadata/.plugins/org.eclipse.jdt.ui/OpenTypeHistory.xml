@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=elibrary-service/src\/main\/java&lt;dskarpetis.elibrary.service.user.impl{UserServiceImpl.java[UserServiceImpl" modifiers="1" timestamp="1504209831512"/>
+<typeInfo handle="=elibrary/\/etc\/lib\/wicket\/7.4.0\/wicket-core-7.4.0.jar&lt;org.apache.wicket.validation(IValidatable.class[IValidatable" modifiers="1537" timestamp="-1"/>
+<typeInfo handle="=elibrary-service/src\/main\/java&lt;dskarpetis.elibrary.service.book.impl{BookServiceImpl.java[BookServiceImpl" modifiers="1" timestamp="1492256763384"/>
+<typeInfo handle="=elibrary/\/etc\/lib\/wicket\/7.4.0\/wicket-core-7.4.0.jar&lt;org.apache.wicket.ajax.markup.html.form(AjaxButton.class[AjaxButton" modifiers="1025" timestamp="-1"/>
+<typeInfo handle="=elibrary/\/etc\/lib\/wicket\/7.4.0\/wicket-core-7.4.0.jar&lt;org.apache.wicket.markup.html.link(Link.class[Link" modifiers="1025" timestamp="-1"/>
+<typeInfo handle="=elibrary/src\/main\/java&lt;dskarpetis.elibrary.ui{ElibraryPage.java[ElibraryPage" modifiers="1" timestamp="1485892606697"/>
+<typeInfo handle="=elibrary/\/etc\/lib\/wicket\/7.4.0\/wicket-core-7.4.0.jar&lt;org.apache.wicket.markup.html.panel(Panel.class[Panel" modifiers="1025" timestamp="-1"/>
+</typeInfoHistroy>

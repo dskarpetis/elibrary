@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="title">Title</entry>
+	<entry key="author">Author</entry>
+	<entry key="publisher">Publisher</entry>
+	<entry key="yearpublish">Year published</entry>
+	<entry key="genre">Genre</entry>
+	<entry key="isbn13">ISBN13</entry>
+	<entry key="edition">Edition</entry>
+	<entry key="description">Description</entry>
+	<entry key="fileuploadfield">FileUpload</entry>
+	<entry key="genre.nullValid">Select genre</entry>
+	<entry key="title-help-title">Sets the title</entry>
+	<entry key="title-help-body">The title must have 40 characters maximum length</entry>
+	<entry key="author-help-title">Sets the author</entry>
+	<entry key="author-help-body"><![CDATA[The author name must contain latin uppercase characters.</br>Some example of valid author are described below:<b><ul><li>AUTHOR</li><li>AUTHOR T</li></ul></b>]]></entry>
+	<entry key="publisher-help-title">Sets the publisher</entry>
+	<entry key="publisher-help-body"><![CDATA[The publisher name must contain latin uppercase characters.</br>Some example of valid publisher are described below:<b><ul><li>PUBLISHER</li><li>PUBLISHER T</li></ul></b>]]></entry>
+	<entry key="yearpublish-help-title">Sets the book year published</entry>
+	<entry key="yearpublish-help-body">The year published must be previous than current</entry>
+	<entry key="genre-help-title">Sets the genre</entry>
+	<entry key="genre-help-body">Select the genre of book</entry>
+	<entry key="isbn13-help-title">Sets the ISBN13</entry>
+	<entry key="isbn13-help-body"><![CDATA[The four parts of an ISBN13 are as follows<ul><li>Group or country identifier which identifies a national or geographic grouping of publishers</li>
+																																											<li>Publisher identifier which identifies a particular publisher within a group</li><li>Title identifier which identifies a particular title or edition of a title</li><li>Check digit is the single digit at the end of the ISBN which validates the ISBN</li></ul>
+																																											Some example of valid ISBN13 are described below:<b><ul><li>978-0-596-52068-7</li><li>978 0 596 52068 7</li><li>9780596520687</li></ul></b>]]></entry>
+	<entry key="edition-help-title">Sets the edition number</entry>
+	<entry key="edition-help-body">The edition number must be between 1-9</entry>
+	<entry key="description-help-title">Sets a description</entry>
+	<entry key="description-help-body">The description of book length must be at least 1
+		characters and maximum length of 100</entry>
+	<entry key="fileupload-help-title">Sets the upload book file</entry>
+	<entry key="fileupload-help-body">
+		The type of file must be .pdf and the maximum size 50
+		megabyte</entry>
+	<entry key="NotAllFieldsEmptyValidator">Please fill in at least one field!</entry>
+	<entry key="clear">Clear</entry>
+	<entry key="AuthorValidator.author">Invalid author</entry>
+	<entry key="PublisherValidator.publisher">Invalid publisher</entry>
+	<entry key="Isbn13Validator.isbn13">Invalid ISBN13</entry>
+	<entry key="BookUploadValidator">Wrong file</entry>
+	<entry key="PublishedDateValidator.publishedDate">Wrong Date</entry>
+	<entry key="EditionValidator.edition">Wrong edition number</entry>
+	<entry key="Isbn13ExistsValidator">ISBN13 already exists, enter a different isbn.</entry>
+</properties>

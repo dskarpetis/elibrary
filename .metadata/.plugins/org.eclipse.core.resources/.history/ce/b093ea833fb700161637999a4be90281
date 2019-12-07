@@ -1,0 +1,153 @@
+/**
+ * LoginPanel.java
+ *
+ * Skarpetis Dimitris 2016, all rights reserved.
+ */
+package dskarpetis.elibrary.ui.authentication;
+
+import org.apache.wicket.Component;
+import org.apache.wicket.WicketRuntimeException;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.PasswordTextField;
+import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.LoadableDetachableModel;
+
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
+
+import dskarpetis.elibrary.service.user.UserService;
+import dskarpetis.elibrary.service.user.UserServiceException;
+import dskarpetis.elibrary.service.user.UserServiceModule;
+import dskarpetis.elibrary.ui.ElibrarySession;
+import dskarpetis.elibrary.ui.search.SearchPage;
+
+/**
+ * Class that defines the LoginPanel component
+ * 
+ * @author dskarpetis
+ */
+public class LoginPanel extends Panel {
+	private static final long serialVersionUID = 1L;
+
+	// Define String KEYS for the component declaration <span wicket:id="KEY">
+	// to HTML file
+	private static final String FORM_KEY = "login";
+	private static final String USERNAME_KEY = "username";
+	private static final String PASSWORD_KEY = "password";
+	private static final String FEEDBACK_KEY = "feedback";
+	private static final String SUBMIT_KEY = "submit";
+	private static final String SIGNUP_KEY = "signup";
+	private final FeedbackPanel feedbackPanel;
+
+	// Defines a LoadableDetachableModel for {@link UserService}
+	private final IModel<UserService> userLoginServiceModel = new LoadableDetachableModel<UserService>() {
+		private static final long serialVersionUID = 1L;
+		@Inject
+		UserService userService;
+
+		@Override
+		protected UserService load() {
+			Injector injector = Guice.createInjector(new UserServiceModule());
+			userService = injector.getInstance(UserService.class);
+			return userService;
+		}
+	};
+
+	/**
+	 * @param id
+	 * @param formModel
+	 */
+	public LoginPanel(final String id, final IModel<UserLoginData> formModel) {
+		super(id, formModel);
+		// Form component
+		final Form<UserLoginData> form = new Form<UserLoginData>(FORM_KEY);
+		// add form component to the parent panel component
+		add(form);
+		// bind UserLoginData class properties with form component
+		form.setDefaultModel(formModel);
+		// TextField component for username html field
+		final TextField<String> username = (TextField<String>) new TextField<String>(USERNAME_KEY).setRequired(true);
+		// TextField component for password html field
+		final PasswordTextField password = (PasswordTextField) new PasswordTextField(PASSWORD_KEY).setRequired(true);
+		// Define a link for SignupPage
+		SignupLink signupLink = new SignupLink(SIGNUP_KEY);
+		// FeedbackPanel component that displays error messages
+		feedbackPanel = new FeedbackPanel(FEEDBACK_KEY);
+		feedbackPanel.setOutputMarkupId(true);
+		// add components to form
+		queue(username, password, signupLink, feedbackPanel);
+		// create and add Button component to form
+
+		AjaxButton loginButton = new LoginAjaxButton(SUBMIT_KEY);
+		queue(loginButton);
+
+	}
+
+	/**
+	 * 
+	 */
+	public void login() {
+		UserLoginData userLoginData = (UserLoginData) getDefaultModelObject();
+		try {
+			// Store User in ElibrarySession page
+			ElibrarySession.get().login(userLoginData, userLoginServiceModel);
+			// if user is valid redirect to SearchPage
+			setResponsePage(SearchPage.class);
+		}
+		// catch (UserServiceException e) {
+		// // if username is invalid, displays the appropriate message
+		// if (!e.userExists()) {
+		// error(getString("UsernameExistsValidator"));
+		// }
+		// // if password is invalid, displays the appropriate message
+		// if (!e.isValidPassword()) {
+		// error(getString("PasswordExistsValidator"));
+		// }
+		// } catch (Exception exception) {
+		// // This should never happen
+		// throw new
+		// WicketRuntimeException("Login failed! Make sure that the credentials are correct and UserService is running.",
+		// exception);
+		// }
+		catch (Exception exception) {
+			// This should never happen
+			throw new WicketRuntimeException("Login failed! Make sure that the credentials are correct and UserService is running.", exception);
+		}
+	}
+
+	/**
+	 * Helper method to access a Components {@link LoginPanel} parent.
+	 * 
+	 * @param component
+	 *            The component to get the parent panel from
+	 * @return The {@link LoginPanel} instance.
+	 */
+	public static LoginPanel get(final Component component) {
+		Component p = component.getParent();
+		if (p instanceof LoginPanel) {
+			return (LoginPanel) p;
+		} else if (p != null) {
+			return get(p);
+		} else {
+			throw new IllegalArgumentException(String.format("Component doesn't belong to a CustomerDataPanel instance"));
+		}
+	}
+
+	/**
+	 * Update the feedback modal in an AJAX request by adding it to the
+	 * {@link AjaxRequestTarget}.
+	 * 
+	 * @param target
+	 *            The {@link AjaxRequestTarget} of the current AJAX request.
+	 */
+	public void updateFeedback(final AjaxRequestTarget target) {
+		target.add(feedbackPanel);
+	}
+
+}

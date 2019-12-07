@@ -1,0 +1,189 @@
+2016-11-26 22:33:56,247 [main] INFO  org.eclipse.jetty.server.Server - jetty-8.1.14.v20131031
+2016-11-26 22:33:56,309 [main] INFO  o.e.jetty.server.AbstractConnector - Started SelectChannelConnector@0.0.0.0:61866
+2016-11-26 22:33:57,194 [qtp1747244266-820] WARN  o.e.jetty.servlet.ServletHandler - 
+org.apache.jasper.JasperException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+The type java.io.ObjectInputStream cannot be resolved. It is indirectly referenced from required .class files
+
+
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:129) ~[na:na]
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:299) ~[na:na]
+	at org.apache.jasper.compiler.Compiler.generateClass(Compiler.java:392) ~[na:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:453) ~[na:na]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:625) ~[na:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:374) ~[na:na]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:492) ~[na:na]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:378) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.jsp.jasper.JspServlet.service(JspServlet.java:155) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.http.registry.internal.ServletManager$ServletWrapper.service(ServletManager.java:180) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ServletRegistration.service(ServletRegistration.java:61) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.processAlias(ProxyServlet.java:128) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.service(ProxyServlet.java:76) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.http.jetty.internal.HttpServerManager$InternalHttpServiceServlet.service(HttpServerManager.java:386) ~[org.eclipse.equinox.http.jetty_3.0.100.v20130327-1442.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684) ~[org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501) [org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:229) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:428) [org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.Server.handle(Server.java:370) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [org.eclipse.jetty.http_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [org.eclipse.jetty.http_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:667) [org.eclipse.jetty.io_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [org.eclipse.jetty.io_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [org.eclipse.jetty.util_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [org.eclipse.jetty.util_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-11-26 22:33:57,194 [qtp1747244266-822] WARN  o.e.jetty.servlet.ServletHandler - 
+org.apache.jasper.JasperException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+The type java.util.Map$Entry cannot be resolved. It is indirectly referenced from required .class files
+
+PWC6199: Generated servlet error:
+The type java.io.ObjectInputStream cannot be resolved. It is indirectly referenced from required .class files
+
+
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:129) ~[na:na]
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:299) ~[na:na]
+	at org.apache.jasper.compiler.Compiler.generateClass(Compiler.java:392) ~[na:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:453) ~[na:na]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:625) ~[na:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:374) ~[na:na]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:492) ~[na:na]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:378) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.jsp.jasper.JspServlet.service(JspServlet.java:155) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.http.registry.internal.ServletManager$ServletWrapper.service(ServletManager.java:180) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ServletRegistration.service(ServletRegistration.java:61) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.processAlias(ProxyServlet.java:128) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.service(ProxyServlet.java:76) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.http.jetty.internal.HttpServerManager$InternalHttpServiceServlet.service(HttpServerManager.java:386) ~[org.eclipse.equinox.http.jetty_3.0.100.v20130327-1442.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684) ~[org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501) [org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:229) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:428) [org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.Server.handle(Server.java:370) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865) [org.eclipse.jetty.http_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [org.eclipse.jetty.http_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:667) [org.eclipse.jetty.io_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [org.eclipse.jetty.io_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [org.eclipse.jetty.util_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [org.eclipse.jetty.util_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-11-26 22:33:57,237 [qtp1747244266-822] WARN  o.e.jetty.servlet.ServletHandler - /wse/wsexplorer/launch_options_registry.jsp
+org.apache.jasper.JasperException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+The type java.util.Map$Entry cannot be resolved. It is indirectly referenced from required .class files
+
+PWC6199: Generated servlet error:
+The type java.io.ObjectInputStream cannot be resolved. It is indirectly referenced from required .class files
+
+
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:129) ~[na:na]
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:299) ~[na:na]
+	at org.apache.jasper.compiler.Compiler.generateClass(Compiler.java:392) ~[na:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:453) ~[na:na]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:625) ~[na:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:374) ~[na:na]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:492) ~[na:na]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:378) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.jsp.jasper.JspServlet.service(JspServlet.java:155) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.http.registry.internal.ServletManager$ServletWrapper.service(ServletManager.java:180) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ServletRegistration.service(ServletRegistration.java:61) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.processAlias(ProxyServlet.java:128) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.service(ProxyServlet.java:76) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.http.jetty.internal.HttpServerManager$InternalHttpServiceServlet.service(HttpServerManager.java:386) ~[org.eclipse.equinox.http.jetty_3.0.100.v20130327-1442.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684) ~[org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501) [org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:229) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:428) [org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.Server.handle(Server.java:370) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865) [org.eclipse.jetty.http_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [org.eclipse.jetty.http_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:667) [org.eclipse.jetty.io_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [org.eclipse.jetty.io_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [org.eclipse.jetty.util_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [org.eclipse.jetty.util_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-11-26 22:33:57,247 [qtp1747244266-820] WARN  o.e.jetty.servlet.ServletHandler - /wse/wsexplorer/wsexplorer.jsp
+org.apache.jasper.JasperException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+The type java.io.ObjectInputStream cannot be resolved. It is indirectly referenced from required .class files
+
+
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:129) ~[na:na]
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:299) ~[na:na]
+	at org.apache.jasper.compiler.Compiler.generateClass(Compiler.java:392) ~[na:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:453) ~[na:na]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:625) ~[na:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:374) ~[na:na]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:492) ~[na:na]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:378) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.jsp.jasper.JspServlet.service(JspServlet.java:155) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.http.registry.internal.ServletManager$ServletWrapper.service(ServletManager.java:180) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ServletRegistration.service(ServletRegistration.java:61) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.processAlias(ProxyServlet.java:128) ~[na:na]
+	at org.eclipse.equinox.http.servlet.internal.ProxyServlet.service(ProxyServlet.java:76) ~[na:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) ~[javax.servlet_3.0.0.v201112011016.jar:na]
+	at org.eclipse.equinox.http.jetty.internal.HttpServerManager$InternalHttpServiceServlet.service(HttpServerManager.java:386) ~[org.eclipse.equinox.http.jetty_3.0.100.v20130327-1442.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684) ~[org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501) [org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:229) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:428) [org.eclipse.jetty.servlet_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.Server.handle(Server.java:370) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [org.eclipse.jetty.http_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [org.eclipse.jetty.http_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [org.eclipse.jetty.server_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:667) [org.eclipse.jetty.io_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [org.eclipse.jetty.io_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [org.eclipse.jetty.util_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [org.eclipse.jetty.util_8.1.14.v20131031.jar:8.1.14.v20131031]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-11-27 00:13:17,298 [main] INFO  o.e.j.server.handler.ContextHandler - stopped o.e.j.s.ServletContextHandler{/wse,null}
